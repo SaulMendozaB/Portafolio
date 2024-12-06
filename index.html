@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Portafolio</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header class="navbar">
-            <div class="navbar-logo">
-                <img src="assets/My_Logo__White_Removebg.png" alt="Logo" width="60px" height="50px">
-            </div>
-            <nav class="navbar-links">
-                <a href="#start">Inicio</a>
-                <a href="#about">Sobre Mi</a>
-                <a href="#projects">Proyectos</a>
-            </nav>
-            <div class="navbar-cta">
-                <a href="#cta" class="btn-primary">Contacto</a>
-            </div>
-        </header>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Barra de navegación -->
+    <header class="navbar">
+      <div class="navbar-logo">
+        <img
+          src="assets/My_Logo__White_Removebg.png"
+          alt="Logo"
+          width="60px"
+          height="50px"
+        />
+      </div>
+      <nav class="navbar-links">
+        <a href="#start">Inicio</a>
+        <a href="#about">Sobre Mi</a>
+        <a href="#projects">Proyectos</a>
+      </nav>
+      <div class="navbar-cta">
+        <a href="#cta" class="btn-primary">Contacto</a>
+      </div>
+    </header>
+    <!-- Sección Inicio -->
+    <section id="start" class="section">
+      <div class="voice-chat-card-header">
+        <img class="avatar" src="assets/yopi.jpg"/>
+        <div class="status"></div>
+        <div class="username">Disponible para trabajo</div>
+      </div>
+      <h1 class="hero-title">Bienvenido a mi portafolio</h1>
+      <p>Explora mi trabajo y conoce más sobre mí.</p>
+    </section>
+
+    <!-- Sección Sobre Mi -->
+    <section id="about" class="section">
+      <h1>Sobre Mi</h1>
+      <p>Soy un desarrollador apasionado por crear soluciones innovadoras.</p>
+    </section>
+
+    <!-- Sección Proyectos -->
+    <section id="projects" class="section">
+      <h1>Proyectos</h1>
+      <p>Descubre algunos de los proyectos en los que he trabajado.</p>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="cta" class="section">
+      <h1>Contacto</h1>
+      <p>¿Quieres trabajar conmigo? ¡Contáctame!</p>
+    </section>
+  </body>
+  <script src="scripts.js"></script>
 </html>

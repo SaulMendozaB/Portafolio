@@ -4,7 +4,9 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+html {
+    scroll-behavior: smooth;
+}
   /* Estilos generales */
 body {
     font-family: Arial, sans-serif;
@@ -13,41 +15,63 @@ body {
     color: #333;
 }
 
+.section {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: #2a2a2a; 
+    color: #ffffff;
+}
+
 /* Barra de navegación */
 .navbar {
     display: flex;
+    font-family: 'Poppins', sans-serif;
     justify-content: space-between;
     align-items: center;
-    background-color: #3e5c76; /* Color de tu paleta */
+    background-color: #2a2a2a; /* Color de tu paleta */
     padding: 15px 30px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: -16px; /* Altura del brillo */
+    left: 0;
+    width: 100%;
+    height: 10px; /* Altura del brillo */
+    box-shadow: 0px 10px 15px rgba(108, 108, 108, 0.3); /* Brillo que se proyecta hacia abajo */
+    z-index: -1; /* Detrás del navbar */
 }
 
 .navbar-logo {
-    font-size: 1em;
-    font-weight: bold;
-    color: #0d1321; /* Color claro */
-    text-decoration: none;
+    box-shadow: #535353;
 }
 
 .navbar-links {
+    background-color: #535353;
+    padding: 10px 20px;
+    border-radius: 10px;
     display: flex;
-    gap: 20px;
+    gap: 40px;
 }
 
 .navbar-links a {
-    color: #0d1321;
+    color: #d6d6d6;
     text-decoration: none;
     font-size: 1em;
-    transition: color 0.3s;
+    padding: 2px 5px; /* Agrega el padding aquí */
+    border-radius: 10px; /* Conserva el diseño redondeado */
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .navbar-links a:hover {
-    color: #ffffff; /* Hover en tu paleta */
+    color: #000000; /* Hover en tu paleta */
+    background-color: #ffffff; /* Cambia solo el color de fondo */
+    
 }
 
   /* Botón de llamada a la acción */
@@ -55,13 +79,61 @@ body {
     background-color: #ffffff;
     color: #0d1321;
     padding: 10px 20px;
-    border-radius: 20px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .navbar-cta .btn-primary:hover {
-    background-color: #ced7e3;
+    background-color: #b8b8b8;
     transform: scale(1.05);
 }
+
+.hero-title {
+    font-size: 3em; /* Tamaño más grande */
+    font-weight: bold; /* Peso de fuente */
+    text-align: center; /* Centrado */
+    font-family: 'Poppins', sans-serif; /* Tipografía mejorada */
+    background: linear-gradient(to right, #ffffff, #adadad); /* Degradado hacia la derecha */
+    -webkit-background-clip: text; /* Clip para mostrar el fondo */
+    -webkit-text-fill-color: transparent; /* Hace el texto transparente */
+    margin: 20px 0;
+}
+
+  
+  .voice-chat-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    margin-right: 10px;
+    color: black;
+    background-color: #333;
+  }
+  
+  .username {
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+  }
+  
+  .status {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgb(99, 250, 99);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .status-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
