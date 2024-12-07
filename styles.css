@@ -357,17 +357,35 @@ body {
 
 .aboutme {
   background-color: #212121;
-  padding: 20px 40px;
+  padding: 20px;
   border-radius: 10px;
   display: flex;
-  justify-content: center; /* Centra el contenido dentro de la card */
-  align-items: center;
-  height: 300px;
-  width: 700px;
-  margin: 0 auto; /* Centra la card horizontalmente */
-  flex-direction: column; /* Asegura que el texto se apile verticalmente */
-  min-height: 220px; /* Altura mínima para la tarjeta */
-  overflow: hidden; /* Evita que el texto se desborde fuera de la tarjeta */
+  flex-direction: column; /* Asegura que el contenido esté apilado */
+  align-items: center; /* Centra el contenido horizontalmente */
+  justify-content: center; /* Centra el contenido verticalmente */
+  max-width: 90%; /* Limita el ancho máximo a un porcentaje del contenedor */
+  width: 700px; /* Ancho inicial */
+  margin: 20px auto; /* Centra horizontalmente en todas las pantallas */
+  box-sizing: border-box; /* Incluye padding y border en el tamaño total */
+  text-align: center;
+  overflow: hidden; /* Evita el desbordamiento del contenido */
+}
+
+/* Ajustes responsivos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .aboutme {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 100%; /* Evita desbordamiento horizontal */
+    padding: 15px; /* Reduce el padding en pantallas pequeñas */
+    margin: 10px auto; /* Reduce los márgenes */
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutme {
+    padding: 10px; /* Más pequeño en pantallas muy pequeñas */
+    font-size: 0.9em; /* Ajusta el tamaño de fuente */
+  }
 }
 
 .aboutme p {
@@ -394,51 +412,58 @@ body {
 }
 
 /* General Styles */
-.tech-slider {
-  position: relative;
-  overflow: hidden; /* Oculta el contenido fuera de la cinta */
-  width: 100%; /* Abarca todo el ancho del contenedor */
-  height: 200px; /* Altura fija de la cinta */
-  background-color: #333; /* Fondo de la cinta */
-  margin-top: 20px;
-  border-radius: 10px;
-  cursor: grab;
+.tech-card-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #21212184;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-.slider-track {
-  display: flex;
-  animation: scroll linear infinite; /* Animación continua */
-  will-change: transform;
+.tech-card-container h2 {
+  font-size: 24px;
+  color: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.625);
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
 }
 
 .tech-card {
-  flex: 0 0 auto; /* Evita que las tarjetas se reduzcan */
-  width: 200px;
-  height: 200px;
-  margin: 0 10px;
-  background-color: #ffffff00;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  justify-content: center;
+  background: #1b1b1b;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.625);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .tech-card img {
-  max-width: 90%; /* Ajusta la imagen al 90% del ancho de la tarjeta */
-  max-height: 90%; /* Ajusta la imagen al 90% de la altura de la tarjeta */
-  object-fit: contain; /* Mantiene la relación de aspecto sin distorsionar la imagen */
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+  object-fit: contain;
 }
 
-/* Animación de desplazamiento */
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-200px * 13)); /* Desplaza la mitad del contenido */
-  }
+.tech-card span {
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tech-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /*Proyectos*/
@@ -453,9 +478,9 @@ body {
 
 .project-card {
   position: relative;
-  background: #fff;
+  background: #21212184;
   border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.895);
   overflow: hidden;
   text-align: center;
   padding: 20px;
@@ -469,7 +494,7 @@ body {
 
 .project-image {
   width: 100%; /* Ocupa el ancho completo de la tarjeta */
-  height: 150px; /* Altura fija */
+  height: 300px; /* Altura fija */
   object-fit: cover; /* Ajuste sin deformación */
   border-radius: 5px;
   margin-bottom: 10px;
@@ -477,8 +502,10 @@ body {
 
 .project-description {
   font-size: 1em;
-  color: #333;
+  color: #ffffff;
   margin-bottom: 20px; /* Espaciado entre descripción y botón */
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .button-icon {
